@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <isNew>true</isNew>
+  <type>war</type>
+  <app>
+    <!-- app包放置路径, 可以一次配置 -->
+    <appPath>H:\test</appPath>
+    <!-- app包名称, 每个应用单独配置 -->
+    <appName>nemo-user.war</appName>
+    <!-- 应用访问路径, 每个应用单独配置 -->
+    <url>web.test.nemo.net</url>
+    <!-- 应用访问端口, 每个应用单独配置 -->
+    <port>9094</port>
+    <!-- war包部署路径, 配置一次 -->
+    <deployPath>H:\test\deploy</deployPath>
+  </app>
+  <tomcat>
+    <!-- tomcat服务器安装路径, 配置一次 -->
+    <catalinaHome>D:\SERVERS\TOMCAT\apache-tomcat-6.0.18</catalinaHome>
+    <!-- tomcat实例路径, 配置一次 -->
+    <catalinaBase>D:\SERVERS\TOMCAT\domains</catalinaBase>
+    <!-- tomcat服务器配置文件路径 , 配置一次-->
+    <serverConfPath>D:\SERVERS\TOMCAT\apache-tomcat-6.0.18\conf</serverConfPath>
+    <!-- tomcat执行路径 , 配置一次-->
+    <executePath>D:\SERVERS\TOMCAT\apache-tomcat-6.0.18\bin</executePath>
+  </tomcat>
+  <nginx>
+    <!-- nginx执行路径, 配置 一次 -->
+    <executePath>miyou</executePath>
+    <!-- nginx配置路径, 配置一次 -->
+    <confPath>miyou</confPath>
+  </nginx>
+</root>
