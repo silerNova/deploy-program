@@ -14,7 +14,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.2</version>
+      <version>1.7.9</version>
     </dependency>
     <dependency>   
       <groupId>dom4j</groupId>    
@@ -24,7 +24,7 @@
     <dependency>
 	  <groupId>org.apache.commons</groupId>
 	  <artifactId>commons-compress</artifactId>
-	  <version>1.8.1</version>
+	  <version>1.9</version>
     </dependency>
     <dependency>
 	  <groupId>commons-io</groupId>
@@ -42,6 +42,45 @@
           <target>1.6</target>
         </configuration>
       </plugin>
+      <!-- <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+              <archive>
+                  <manifest>
+                      <addClasspath>true</addClasspath>
+                      <mainClass>com.deploy.program.launcher.AutoDeployLauncher</mainClass>
+                  </manifest>
+              </archive>
+              <excludes>
+			      <exclude>*.xml</exclude>
+			      <exclude>*.properties</exclude>
+			  </excludes>
+          </configuration>
+      </plugin> -->
+      <plugin>  
+	      <artifactId>maven-assembly-plugin</artifactId>
+	      <version>2.2</version> 
+	      <configuration>  
+	          <archive>  
+	              <manifest>  
+	                  <mainClass>com.deploy.program.launcher.AutoDeployLauncher</mainClass>  
+	              </manifest>  
+	          </archive>
+	          <descriptors>
+		          <descriptor>src/main/assemble/package.xml</descriptor>
+			  </descriptors>
+	     </configuration>
+	     <executions>
+			<execution>
+				<id>make-assembly</id>
+				<phase>package</phase>
+				<goals>
+					<goal>single</goal>
+				</goals>
+			</execution>
+		</executions>
+	  </plugin>
     </plugins>
   </build>
 </project>
